@@ -138,7 +138,8 @@ nav ul li:hover a::after {
 
         background: none;
         border: none;
-
+        border-radius: 50%;
+        
         cursor: pointer;
 
         background-image: url('assets/menu_dark.svg');
