@@ -1,45 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="LogoSection">
-                <div class="Logo"><img src="gdsc-logo.png" alt="gdsc-logo"></div>
-                <div class="Brand">GDSC NITJ</div>
-            </div>
-            <div class="Nav">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Section1</li>
-                    <li>Section2</li>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>T-1000 Website Frame</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <a href="#main" class="a11y_link">
+            Skip to Main Content
+        </a>
+        <header class="flex jcc">
+            <nav>
+                <a href="" class="BRAND">
+                    <h3>
+                        E2A Conference
+                    </h3>
+                </a>
+
+                <button id="nav_toggle" aria-hidden="true" data-extended="false">
+                    <span  class="hidden">Main</span>
+                </button>
+
+                <ul id="nav" data-visible="false">
+                    <li><a href="#main">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href>Option2</a></li>
+                    <li><a href>Option2</a></li>
                 </ul>
-            </div>
-            <div class="Login">
-                <div>Create an Account</div>
-            </div>
-        </nav>
-    </header>
+                <div id='dark_filter' data-visible="false"></div>
 
-    <div class="gradient-container">
-        <div class="gradient"></div>
-    </div>
+            </nav>
+            
+        </header>
 
-    <main>
-        
-        <div class="hero">
-            <h1>
-                Congratulations! Your Webpage is now,<br>
-                Hosted via GitHub Pages Successfully!
-            </h1>
-        </div>
+        <main id="main">
 
-    </main>
-</body>
+            <section id="hero" class="relative">
+                <a href="#about" class="a11y_link">
+                    Skip to About Section
+                </a>
+                <div class="data">
+                    <h1>
+                        Karan
+                    </h1>
+                </div>
+            </section>
+
+            <section id="about" class="relative">
+                <a href="#dates" class="a11y_link">
+                    Skip to Important Dates Section
+                </a>
+            </section>
+
+            <section id="dates" class="relative">
+
+            </section>
+
+            <section>
+                <a href="#about" class="a11y_link">
+                    Skip to About Section
+                </a>
+            </section>
+        </main>
+
+        <footer>
+
+        </footer>
+        <script src="mobile-nav.js"></script>
+    </body>
 </html>
