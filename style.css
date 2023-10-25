@@ -157,7 +157,7 @@ nav ul li:hover a::after {
     nav ul {
         position: absolute;
         height: 100dvh;
-        background-color: hsla(135, 50%, 3%, 0.3);
+        background-color: hsla(0, 0%, 0%, 0.3);
         top: 0px;
         right: 0px;
         z-index: 900;
