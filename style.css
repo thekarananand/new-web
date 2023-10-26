@@ -223,7 +223,7 @@ nav ul li:hover a::after {
 }
 
 #hero .data h1 {
-    margin-top: 40px;
+    margin-top: 10vh;
     margin-bottom: 40px;
     width: fit-content;
     font-size: 1.7rem;
@@ -328,6 +328,9 @@ nav ul li:hover a::after {
         height: 1.5rem;
         width: 1.5rem;
     }
+    #hero .data div a > span::after {
+        bottom: -4px;
+        height: 2px;
 }
 
 @media (min-width: 1020px) {
