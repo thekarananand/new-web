@@ -40,7 +40,7 @@
 
 .a11y_link:focus-visible {
     transform: translateX(0%);
-    outline: none;
+    outline-color: transparent;
 }
 
 header {
@@ -93,7 +93,7 @@ nav ul a::after {
 nav ul li:focus-within a::after,
 nav ul li:hover a::after {
     width: 100%;
-    outline: none;
+    /* outline: none; */
 }
 
 #dark_filter {
@@ -105,6 +105,9 @@ nav ul li:hover a::after {
     z-index: 850;
     height: 100dvh;
     width: 100vw;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 @media (min-width: 761px ) {
@@ -133,8 +136,9 @@ nav ul li:hover a::after {
         z-index: 1100;
         right: 0;
 
-        height: var(--header-height);
-        width: var(--header-height);
+        height: calc(var(--header-height) - 20px);
+        width: calc(var(--header-height) - 20px);
+        padding: 10px;
 
         background: none;
         border: none;
@@ -164,6 +168,7 @@ nav ul li:hover a::after {
         width: min(30ch, 70vw);
         flex-direction: column;
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border-left: 1px solid var(--border);
         padding-top: max( 10vh );
         transform: translateX(110%);
@@ -186,18 +191,6 @@ nav ul li:hover a::after {
     align-items: center;
 }
 
-@media (prefers-color-scheme: light) {
-    #hero {
-        background-color: hsl(0, 0%, 45%);
-        background-image: 
-        radial-gradient(at 69%  0%, hsla(135, 50%, 40%, 0.6) 0px, transparent 70%),
-        radial-gradient(at  0% 69%, hsla(184, 50%, 40%, 0.6) 0px, transparent 70%),
-        radial-gradient(at  0%  0%, hsla(236, 82%, 51%, 0.8) 0px, transparent 50%),
-        radial-gradient(at 99% 99%, hsla(320, 82%, 51%, 0.8) 0px, transparent 50%);
-    }    
-}
-
-
 
 #hero::after {
     content: '';
@@ -210,20 +203,105 @@ nav ul li:hover a::after {
     opacity: 0.15;
 }
 
-#hero .data {
+.data {
     position: relative;
     z-index: 10;
-    width: fit-content;
+    height: calc(100% - 40px );
+    width: min( var(--data-width), calc(100% - 40px ));
+    padding: 20px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
 }
 
-#hero h2 {
-    font-size: 4rem;
+
+#hero .data {
+    padding-top: calc(var(--header-height) + 20px);
+    height: calc(100% - 40px - var(--header-height));
+    justify-content: start;
+}
+
+#hero .data h1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: fit-content;
+    font-size: 1.7rem;
     font-weight: 600;
 }
 
-section:nth-of-type(2){
-    border-block: 2px dashed var(--accent);
+#hero .data div {
+    display: flex;
+}
+
+#hero .data div a {
+    padding: 9px 9px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    margin: 4px 0px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+}
+
+#hero .data div a > span {
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    padding-left: calc( 1.4rem + 0.5ch );
 }
 
 
 
+#hero .data div a > span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1.4rem;
+    width: 1.4rem;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+#hero .data div a:nth-of-type(1) > span::before {
+    background-image: url(assets/reg_dark.svg);
+    left: 12px;
+}
+
+#hero .data div a:nth-of-type(2) > span::before {
+    background-image: url(assets/download_dark.svg);
+    left: 9px;
+}
+
+
+#hero .data div a > span::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0px;
+    transition: width 120ms ease-out;
+}
+
+#hero .data a:nth-of-type(1) {
+    background-color: var(--accent);
+    margin-right: 1ch;
+}
+
+#hero .data a:nth-of-type(1) > span {color: var(--background);}
+
+#hero .data a:nth-of-type(1) > span::after{background-color: var(--background)}
+
+#hero .data a:nth-of-type(2) {background-color: var(--background);}
+
+#hero .data a:nth-of-type(2) > span{color: var(--color);}
+
+#hero .data a:nth-of-type(2) > span::after{background-color: var(--accent)}
+
+#hero .data a:focus > span::after,
+#hero .data a:hover > span::after {
+    width: 100%;
+}

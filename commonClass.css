@@ -1,6 +1,6 @@
 
 
-:root {
+/* :root {
     --color: black;
     --color-2: hsl(0, 0%, 20%);
     --background: hsl(0, 0%, 95%);
@@ -18,6 +18,15 @@
         --border: hsl(0, 0%, 40%);
         --accent: hsl(135, 50%, 65%);
     }
+} */
+
+:root {
+    --color: white;
+    --color-2: hsl(0, 0%, 80%);
+    --background: hsl(0, 0%, 5%);
+    --header-background: hsla(0, 0%, 0%, 0.6);
+    --border: hsl(0, 0%, 40%);
+    --accent: hsl(135, 50%, 65%);
 }
 
 body{
